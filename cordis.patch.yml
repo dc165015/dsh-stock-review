@@ -1,0 +1,11 @@
+# dsh-stock-review — 个股深度股评
+#
+# 注册一个 Host 插件，向 ctx.skills 注入 runtime skill「stock-review」。
+# 技能正文来自本包的 SKILL.md，脚本与数据源说明位于同目录 scripts/ 与 references/。
+#
+# 安装：Plugins -> 添加插件 -> 选择本目录（或由 plugin_manager install_bundle 安装）。
+# 效果：对话中输入股票代码（如「股评 600519」）即触发十段式股评 + 单文件 HTML 报告。
+- insert:
+    - id: stock-review
+      name: dsh-stock-review
+      config: {}

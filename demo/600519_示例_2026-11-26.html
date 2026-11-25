@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【600519】【贵州茅台】完整个股深度股评｜2026.11.26</title>
+<meta name="description" content="贵州茅台（600519）个股深度股评：核心结论、舆情分析、涨停复盘、业务结构、财报点评、券商研报与风险提示。">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<style>
+:root{
+  --bg:#0b1628; --bg-2:#0e1b33; --panel:#111f3a; --panel-2:#16284a;
+  --line:rgba(245,192,99,.14); --line-strong:rgba(245,192,99,.38);
+  --gold:#f5c063; --gold-dim:#c99b45; --text:#e8eefc; --muted:#93a6c4;
+  --up:#ff5b5b; --down:#2ecc8f; --shadow:0 18px 40px rgba(0,0,0,.38);
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Inter","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  line-height:1.75; font-size:15px;
+  background-image:
+    radial-gradient(1200px 500px at 12% -8%, rgba(245,192,99,.10), transparent 62%),
+    radial-gradient(900px 420px at 92% 2%, rgba(56,132,255,.14), transparent 60%),
+    radial-gradient(800px 500px at 50% 110%, rgba(22,40,74,.65), transparent 70%);
+  background-attachment:fixed;
+}
+a{color:var(--gold); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px; margin:0 auto; padding:0 22px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.up{color:var(--up)}
+.down{color:var(--down)}
+.flat{color:var(--muted)}
+.strong{color:var(--gold); font-weight:600}
+
+/* ---------- 顶部导航 ---------- */
+.nav{
+  position:sticky; top:0; z-index:60;
+  background:rgba(11,22,40,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(245,192,99,.12);
+}
+.nav-inner{max-width:1180px; margin:0 auto; padding:0 22px; display:flex; align-items:center; gap:6px; height:58px}
+.brand{display:flex; align-items:center; gap:10px; margin-right:14px; flex-shrink:0}
+.brand-mark{
+  width:30px; height:30px; border-radius:9px; display:grid; place-items:center;
+  background:linear-gradient(145deg,#f5c063,#c99b45); color:#20160a; font-weight:800; font-size:15px;
+  box-shadow:0 6px 16px rgba(245,192,99,.28)
+}
+.brand-text{font-weight:700; letter-spacing:.5px; font-size:14px; color:#f7e9c9}
+.brand-text small{display:block; font-size:10px; letter-spacing:2px; color:var(--muted); font-weight:500}
+.nav-links{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav a.nav-link{
+  color:var(--muted); font-size:13px; padding:6px 10px; border-radius:8px; white-space:nowrap;
+  border:1px solid transparent; transition:.18s
+}
+.nav a.nav-link:hover{color:var(--text); background:rgba(255,255,255,.05); text-decoration:none}
+.nav a.nav-link.active{color:var(--gold); border-color:rgba(245,192,99,.35); background:rgba(245,192,99,.08)}
+
+/* ---------- Hero ---------- */
+.hero{padding:52px 0 30px}
+.hero-top{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap}
+.hero-kicker{font-size:12px; letter-spacing:3px; color:var(--gold); text-transform:uppercase}
+.hero-date{font-size:12px; color:var(--muted)}
+.hero-title{margin:16px 0 8px; font-size:40px; line-height:1.2; letter-spacing:.5px; font-weight:800}
+.hero-code{color:var(--gold); font-variant-numeric:tabular-nums}
+.hero-name{color:#fff; margin-left:10px}
+.hero-kind{
+  display:inline-block; margin-left:12px; font-size:14px; font-weight:600; letter-spacing:2px;
+  color:var(--gold-dim); border-left:2px solid var(--line-strong); padding-left:12px; vertical-align:middle
+}
+.hero-sub{color:var(--muted); font-size:13px; margin:6px 0 26px; letter-spacing:.4px}
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
+.stat{
+  background:linear-gradient(160deg,rgba(22,40,74,.92),rgba(15,27,50,.92));
+  border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+  box-shadow:var(--shadow); transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.stat:hover{transform:translateY(-3px); border-color:var(--line-strong); box-shadow:0 22px 46px rgba(0,0,0,.5)}
+.stat-label{font-size:12px; color:var(--muted); letter-spacing:1px}
+.stat-main{margin-top:6px; font-size:23px; font-weight:700; font-variant-numeric:tabular-nums; display:flex; align-items:baseline; gap:4px; flex-wrap:wrap}
+.stat-value{font-variant-numeric:tabular-nums}
+.stat-unit{font-size:12px; color:var(--muted); font-weight:500; margin-left:2px}
+.chg{font-size:13px; font-weight:600; margin-left:4px}
+
+/* ---------- 卡片 ---------- */
+main{padding-bottom:40px}
+.card{
+  background:linear-gradient(170deg,rgba(17,31,58,.96),rgba(13,24,45,.96));
+  border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow); margin:22px 0; overflow:hidden;
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  scroll-margin-top:78px;
+}
+.card:hover{transform:translateY(-2px); border-color:rgba(245,192,99,.30); box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.card-head{display:flex; align-items:center; gap:14px; padding:18px 24px; border-bottom:1px solid rgba(255,255,255,.05)}
+.idx{
+  width:32px; height:32px; flex-shrink:0; border-radius:10px; display:grid; place-items:center;
+  border:1px solid rgba(245,192,99,.45); color:var(--gold); font-weight:700; font-size:14px;
+  background:rgba(245,192,99,.07)
+}
+.card-head h2{margin:0; font-size:19px; letter-spacing:.5px; font-weight:700; color:#fff}
+.card-sub{font-size:12px; color:var(--muted); margin-left:auto; margin-right:8px}
+.toggle{
+  margin-left:auto; display:flex; align-items:center; gap:8px; background:transparent;
+  border:1px solid rgba(255,255,255,.12); color:var(--muted); border-radius:999px;
+  padding:5px 12px; font-size:12px; cursor:pointer; transition:.18s; font-family:inherit
+}
+.card-sub + .toggle{margin-left:0}
+.toggle:hover{color:var(--gold); border-color:var(--line-strong); background:rgba(245,192,99,.06)}
+.chev{width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:rotate(45deg); transition:transform .25s}
+.card.collapsed .chev{transform:rotate(-135deg)}
+.card-body{display:grid; grid-template-rows:1fr; transition:grid-template-rows .3s ease}
+.card.collapsed .card-body{grid-template-rows:0fr}
+.card-inner{overflow:hidden; padding:24px; transition:padding .3s ease}
+.card.collapsed .card-inner{padding-top:0; padding-bottom:0}
+
+/* ---------- 通用组件 ---------- */
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.mini-card{background:rgba(255,255,255,.028); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:16px 18px; transition:.2s}
+.mini-card:hover{background:rgba(255,255,255,.05); border-color:rgba(245,192,99,.25)}
+.mini-card-gold{border-color:rgba(245,192,99,.35); background:linear-gradient(160deg,rgba(245,192,99,.10),rgba(245,192,99,.03))}
+.mini-title{font-size:13px; color:var(--gold); font-weight:700; letter-spacing:1px; margin-bottom:6px}
+.mini-card p{margin:0; font-size:14px; color:#dbe6fb}
+.callout{border-radius:12px; padding:16px 18px; margin:16px 0; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+.callout-gold{border-color:rgba(245,192,99,.4); background:linear-gradient(120deg,rgba(245,192,99,.13),rgba(245,192,99,.03)); position:relative}
+.callout-gold::before{content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px; border-radius:3px; background:var(--gold)}
+.callout-warn{border-color:rgba(255,120,90,.38); background:rgba(255,91,91,.07)}
+.callout-label{font-size:12px; letter-spacing:2px; color:var(--gold); font-weight:700; margin-bottom:6px}
+.callout-warn .callout-label{color:#ff9a85}
+.callout-text{font-size:15px; color:#eef3ff}
+.sub-block{margin-top:18px}
+.sub-title{font-size:13px; letter-spacing:2px; color:var(--gold-dim); font-weight:700; margin-bottom:8px}
+.bullet-list{margin:6px 0 0; padding-left:20px; color:#d9e3f7}
+.bullet-list li{margin:5px 0}
+.num-list{margin:6px 0 0; padding-left:22px; color:#d9e3f7}
+.num-list li{margin:7px 0}
+.tags{display:flex; flex-wrap:wrap; gap:8px}
+.tag{
+  font-size:12.5px; padding:4px 12px; border-radius:999px; border:1px solid rgba(245,192,99,.35);
+  color:var(--gold); background:rgba(245,192,99,.07); transition:.18s
+}
+.tag:hover{background:rgba(245,192,99,.16)}
+.tag-hot{border-color:rgba(255,91,91,.4); color:#ff9a9a; background:rgba(255,91,91,.08)}
+.stat-row{display:flex; flex-wrap:wrap; gap:12px; margin:16px 0}
+.stat-mini{
+  display:flex; flex-direction:column; gap:2px; padding:10px 16px; border-radius:10px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); min-width:120px
+}
+.stat-mini .k{font-size:11.5px; color:var(--muted); letter-spacing:1px}
+.stat-mini .v{font-size:16px; font-weight:700; color:#fff; font-variant-numeric:tabular-nums}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin-top:14px; border-radius:12px; border:1px solid rgba(255,255,255,.07)}
+table{border-collapse:collapse; width:100%; font-size:13.5px}
+thead th{
+  background:rgba(245,192,99,.09); color:var(--gold); font-weight:700; letter-spacing:.6px;
+  padding:11px 12px; border-bottom:1px solid rgba(245,192,99,.18); white-space:nowrap
+}
+tbody td{padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.05); color:#dde6f8; vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(245,192,99,.045)}
+th.left,td.left{text-align:left}
+th.right,td.right{text-align:right; font-variant-numeric:tabular-nums}
+.kv-table th{width:150px; text-align:left; background:transparent; color:var(--muted); font-weight:500; border-bottom:1px solid rgba(255,255,255,.05)}
+.kv-table td{border-bottom:1px solid rgba(255,255,255,.05)}
+
+/* 舆情 */
+.sites{display:flex; flex-direction:column; gap:16px}
+.site-block{background:rgba(255,255,255,.022); border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:16px 18px}
+.site-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
+.site-name{font-weight:700; color:#fff; letter-spacing:1px}
+.site-name::before{content:""; display:inline-block; width:6px; height:6px; border-radius:2px; background:var(--gold); margin-right:8px; vertical-align:middle}
+.site-stat{font-size:12px; color:var(--muted)}
+.side{border-radius:10px; padding:12px 14px; border:1px solid rgba(255,255,255,.06)}
+.side-bull{background:rgba(255,91,91,.05); border-color:rgba(255,91,91,.18)}
+.side-bear{background:rgba(46,204,143,.05); border-color:rgba(46,204,143,.18)}
+.side-title{font-size:12px; font-weight:700; letter-spacing:1.5px; margin-bottom:4px}
+.side-bull .side-title{color:#ff8f8f}
+.side-bear .side-title{color:#5fdbb0}
+.side .bullet-list{color:#d6e0f4; font-size:13.5px}
+.post-list{list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:8px}
+.post-list li{border-left:2px solid rgba(245,192,99,.3); padding-left:12px}
+.post-title{font-size:13.5px}
+.post-meta{font-size:11.5px; color:var(--muted); margin-top:2px}
+
+/* 优势 */
+.adv-list{display:flex; flex-direction:column; gap:12px}
+.adv-card{display:flex; gap:16px; padding:16px 18px; border-radius:12px; background:rgba(255,255,255,.028); border:1px solid rgba(255,255,255,.07); transition:.2s}
+.adv-card:hover{border-color:rgba(245,192,99,.3); background:rgba(245,192,99,.045)}
+.adv-no{font-size:22px; font-weight:800; color:rgba(245,192,99,.55); font-variant-numeric:tabular-nums; line-height:1.2}
+.adv-title{font-weight:700; color:#fff; margin-bottom:4px}
+.adv-card p{margin:0; color:#d6e0f4; font-size:14px}
+
+/* 风险 */
+.risk-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px}
+.risk-list li{display:flex; gap:12px; align-items:flex-start; padding:12px 16px; border-radius:10px; background:rgba(255,91,91,.05); border:1px solid rgba(255,91,91,.16); color:#f2dcdc; font-size:14px}
+.risk-mark{width:20px; height:20px; flex-shrink:0; border-radius:50%; display:grid; place-items:center; background:rgba(255,91,91,.2); color:#ff8f8f; font-size:12px; font-weight:800; margin-top:2px}
+
+/* 图表 */
+.chart-box{margin-top:18px; border:1px solid rgba(255,255,255,.07); border-radius:12px; padding:14px 16px; background:rgba(255,255,255,.02)}
+.chart-title{font-size:12.5px; letter-spacing:1.5px; color:var(--muted); margin-bottom:6px}
+.chart{width:100%; height:330px}
+.chart-sm{height:290px}
+.chart-fallback{padding:24px; text-align:center; color:var(--muted); font-size:13px; display:none}
+
+/* 页脚 */
+.footer{border-top:1px solid rgba(255,255,255,.06); margin-top:34px; padding:26px 0 40px; color:var(--muted); font-size:12px}
+.footer-inner{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.disclaimer{background:rgba(255,255,255,.025); border:1px dashed rgba(255,255,255,.12); border-radius:12px; padding:14px 18px; color:var(--muted); font-size:12.5px; line-height:1.8}
+.gen-note{text-align:right; color:#5f7292; font-size:11.5px; margin-top:10px}
+.src-list{margin:6px 0 0; padding-left:20px; font-size:13px; columns:2; column-gap:28px}
+.src-list li{margin:4px 0; break-inside:avoid}
+
+/* 示例数据提示条 */
+.demo-bar{
+  background:linear-gradient(90deg,rgba(255,138,92,.22),rgba(255,91,91,.10));
+  border-bottom:1px solid rgba(255,138,92,.35); color:#ffb39a;
+  font-size:12.5px; letter-spacing:1px; text-align:center; padding:7px 16px
+}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed; right:26px; bottom:30px; z-index:80; width:42px; height:42px; border-radius:12px;
+  border:1px solid var(--line-strong); background:rgba(17,31,58,.92); color:var(--gold);
+  display:grid; place-items:center; cursor:pointer; opacity:0; pointer-events:none; transition:.25s;
+  font-size:16px
+}
+.to-top.show{opacity:1; pointer-events:auto}
+.to-top:hover{background:rgba(245,192,99,.14)}
+
+/* 响应式 */
+@media (max-width: 900px){
+  .hero-title{font-size:28px}
+  .hero-kind{display:block; margin:10px 0 0; border-left:none; padding-left:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .stat-row{gap:8px}
+  .src-list{columns:1}
+  .card-inner{padding:18px}
+  .nav-links{display:none}
+}
+@media print{
+  body{background:#fff; color:#111}
+  .nav,.to-top,.toggle{display:none !important}
+  .card{break-inside:avoid; box-shadow:none; border:1px solid #ddd}
+  .card-body{grid-template-rows:1fr !important}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-mark">评</span>
+      <span class="brand-text">个股深度股评<small>STOCK REVIEW</small></span>
+    </div>
+    <div class="nav-links"><a class="nav-link" href="#s-conclusion">一、核心结论</a><a class="nav-link" href="#s-sentiment">二、舆情分析总结</a><a class="nav-link" href="#s-business">三、业务结构</a><a class="nav-link" href="#s-advantage">四、核心优势</a><a class="nav-link" href="#s-finance">五、财报点评</a><a class="nav-link" href="#s-research">六、券商研报点评</a><a class="nav-link" href="#s-risk">七、精简风险提示</a><a class="nav-link" href="#s-source">八、数据来源与免责</a></div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero" id="top">
+  <div class="hero-top">
+    <div class="hero-kicker">个股深度研究 · 白酒Ⅱ · 上交所主板</div>
+    <div class="hero-date">数据截至 2026-11-26</div>
+  </div>
+  <h1 class="hero-title">
+    <span class="hero-code">600519</span>
+    <span class="hero-name">贵州茅台</span>
+    <span class="hero-kind">完整个股深度股评</span>
+  </h1>
+  <p class="hero-sub">600519 · 贵州茅台酒股份有限公司 ｜ 2026.11.26</p>
+  <div class="stats"><div class="stat"><div class="stat-label">现价</div><div class="stat-main"><span class="stat-value">1,474.84</span><span class="stat-unit">元</span> <span class="chg up">+1.02%</span></div></div><div class="stat"><div class="stat-label">总市值</div><div class="stat-main"><span class="stat-value">18,436.70</span><span class="stat-unit">亿</span></div></div><div class="stat"><div class="stat-label">自由流通市值</div><div class="stat-main"><span class="stat-value">18,436.70</span><span class="stat-unit">亿</span></div></div><div class="stat"><div class="stat-label">TTM 市盈率</div><div class="stat-main"><span class="stat-value">21.45</span><span class="stat-unit">倍</span></div></div><div class="stat"><div class="stat-label">年内涨幅</div><div class="stat-main"><span class="stat-value up">9.31%</span></div></div></div>
+</header>
+
+</div>
+
+<main class="wrap" id="main">
+
+<section class="card" id="s-conclusion">
+  <header class="card-head">
+    <span class="idx">一</span>
+    <h2>核心结论</h2>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-conclusion-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-conclusion-body"><div class="card-inner">
+<div class="callout callout-gold"><div class="callout-label">一句话定调</div><div class="callout-text">高端白酒龙头 + 市场化改革（全面向C）+ 批价企稳回升 + 估值处于近五年低位区间——典型“基本面筑底、预期先行”的修复型标的。</div></div>
+<div class="grid-2">
+  <div class="mini-card">
+    <div class="mini-title">市场共识</div>
+    <p>市场普遍认为白酒行业仍处深度调整期，茅台依靠品牌力维持个位数增长，增速换挡后估值中枢下移，属于“低增长、高确定性”的类债资产。</p>
+  </div>
+  <div class="mini-card mini-card-gold">
+    <div class="mini-title">我们的不同看法</div>
+    <p>共识把“增速下滑”简单外推为“长期低速”，却忽视了 2026 年市场化改革对渠道利润和终端动销的再定价：三季报单季增速已转正、经营现金流同比翻倍，报表底先于需求底出现。</p>
+  </div>
+</div><div class="sub-block"><div class="sub-title">核心赛道 / 热门题材</div><div class="tags"><span class="tag tag-gold">高端白酒</span><span class="tag tag-gold">国企改革 / 市场化定价</span><span class="tag tag-gold">消费复苏</span><span class="tag tag-gold">高股息防御</span></div></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-sentiment">
+  <header class="card-head">
+    <span class="idx">二</span>
+    <h2>舆情分析总结</h2><span class="card-sub">近两周各大股吧贴文</span>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-sentiment-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-sentiment-body"><div class="card-inner">
+<div class="sites">
+<div class="site-block">
+  <div class="site-head"><span class="site-name">韭研公社</span><span class="site-stat">看多 3 · 看空 2</span></div>
+  <div class="grid-2">
+    <div class="side side-bull"><div class="side-title">看多逻辑</div><ul class="bullet-list"><li>“全面向C”改革是十年级别的渠道重构，厂商重新掌握终端定价权</li><li>三季报经营现金流 840 亿、同比 +120%，报表质量显著改善</li><li>批价止跌回升，渠道库存去化接近尾声</li></ul></div>
+    <div class="side side-bear"><div class="side-title">看空逻辑</div><ul class="bullet-list"><li>改革短期牺牲吨价，报表增速被压制</li><li>行业需求仍弱，动销恢复需要时间验证</li></ul></div>
+  </div>
+  
+</div>
+<div class="site-block">
+  <div class="site-head"><span class="site-name">雪球</span><span class="site-stat">看多 2 · 看空 2</span></div>
+  <div class="grid-2">
+    <div class="side side-bull"><div class="side-title">看多逻辑</div><ul class="bullet-list"><li>21 倍 PE、股息率抬升，估值已隐含悲观预期</li><li>龙头份额在行业出清中被动提升</li></ul></div>
+    <div class="side side-bear"><div class="side-title">看空逻辑</div><ul class="bullet-list"><li>白酒板块整体杀估值尚未结束</li><li>机构持仓仍偏重，存在调仓压力</li></ul></div>
+  </div>
+  
+</div>
+<div class="site-block">
+  <div class="site-head"><span class="site-name">同花顺</span><span class="site-stat">看多 2 · 看空 1</span></div>
+  <div class="grid-2">
+    <div class="side side-bull"><div class="side-title">看多逻辑</div><ul class="bullet-list"><li>股价站上年线，量能温和放大</li><li>北向资金连续净买入</li></ul></div>
+    <div class="side side-bear"><div class="side-title">看空逻辑</div><ul class="bullet-list"><li>缺乏板块性催化，独立行情难持续</li></ul></div>
+  </div>
+  
+</div>
+<div class="site-block">
+  <div class="site-head"><span class="site-name">东财</span><span class="site-stat">看多 2 · 看空 1</span></div>
+  <div class="grid-2">
+    <div class="side side-bull"><div class="side-title">看多逻辑</div><ul class="bullet-list"><li>分红率提升预期强化防御属性</li><li>渠道改革落地节奏超预期</li></ul></div>
+    <div class="side side-bear"><div class="side-title">看空逻辑</div><ul class="bullet-list"><li>批价若再度回落将证伪复苏逻辑</li></ul></div>
+  </div>
+  
+</div>
+<div class="site-block">
+  <div class="site-head"><span class="site-name">淘股吧</span><span class="site-stat">看多 1 · 看空 1</span></div>
+  <div class="grid-2">
+    <div class="side side-bull"><div class="side-title">看多逻辑</div><ul class="bullet-list"><li>超跌白马修复主线，茅台是风向标</li></ul></div>
+    <div class="side side-bear"><div class="side-title">看空逻辑</div><ul class="bullet-list"><li>短线资金偏好题材，龙头弹性不足</li></ul></div>
+  </div>
+  
+</div></div>
+<div class="chart-box">
+  <div class="chart-title">各平台多空观点数量对比</div>
+  <div class="chart" id="chart-sentiment"></div>
+</div><div class="sub-block"><div class="sub-title">舆情总结</div><ul class="bullet-list"><li>近两周舆情整体偏多，核心分歧集中在“改革成效能否在年报兑现”，而非方向本身。</li><li>机构与散户观点趋同，情绪处于中性偏暖区间，尚未出现一致性亢奋。</li></ul></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-business">
+  <header class="card-head">
+    <span class="idx">三</span>
+    <h2>业务结构</h2><span class="card-sub">最新年报口径</span>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-business-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-business-body"><div class="card-inner">
+<div class="muted small" style="margin-bottom:10px">口径：2025年报（营收单位：亿元）</div><div class="table-wrap"><table class="data-table"><thead><tr><th class="left">业务板块</th><th class="right">营收占比</th><th class="right">年营收(亿)</th><th class="right">毛利率</th><th class="left">产品 &amp; 下游</th></tr></thead><tbody><tr><td class="left">茅台酒</td><td class="right">86.8%</td><td class="right">1,465.00</td><td class="right">93.5%</td><td class="left">飞天茅台、生肖/精品等非标产品；核心下游为高端商务宴请、礼赠与收藏市场</td></tr><tr><td class="left">其他系列酒</td><td class="right">13.2%</td><td class="right">222.75</td><td class="right">76.1%</td><td class="left">茅台1935、王子酒、迎宾酒等；面向次高端宴席与大众消费场景</td></tr><tr><td class="left">其他业务</td><td class="right">0.0%</td><td class="right">0.64</td><td class="right">-36.0%</td><td class="left">包装材料、酒店等配套业务，体量极小</td></tr></tbody></table></div><div class="chart-box"><div class="chart-title">营收结构</div><div class="chart chart-sm" id="chart-business"></div></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-advantage">
+  <header class="card-head">
+    <span class="idx">四</span>
+    <h2>核心优势</h2>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-advantage-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-advantage-body"><div class="card-inner">
+<div class="adv-list"><div class="adv-card"><span class="adv-no">01</span><div class="adv-body"><div class="adv-title">品牌与产地双重垄断</div><p>赤水河核心产区 + 大曲酱香工艺 + 五年基酒周期，构成几乎不可复制的供给壁垒。</p></div></div><div class="adv-card"><span class="adv-no">02</span><div class="adv-body"><div class="adv-title">渠道改革掌握定价权</div><p>“自售 + 经销 + 代售”多维体系推进，直营占比提升，厂商对终端价格与利润分配的控制力增强。</p></div></div><div class="adv-card"><span class="adv-no">03</span><div class="adv-body"><div class="adv-title">报表质量与现金创造能力</div><p>毛利率长期 90% 以上、资产负债率不足 20%，2026 年前三季度经营现金流同比增长逾一倍。</p></div></div></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-finance">
+  <header class="card-head">
+    <span class="idx">五</span>
+    <h2>财报点评</h2><span class="card-sub">最新年报 + 最新季报</span>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-finance-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-finance-body"><div class="card-inner">
+<div class="table-wrap"><table class="data-table"><thead><tr><th class="left">报告期</th><th class="right">营收(亿)</th><th class="right">同比</th><th class="right">归母净利(亿)</th><th class="right">同比</th><th class="right">综合毛利率</th><th class="right">资产负债率</th><th class="right">经营现金流</th></tr></thead><tbody><tr><td class="left"><span class="strong">2025年报</span></td><td class="right">1,720.54</td><td class="right"><span class="down">-1.20%</span></td><td class="right">823.20</td><td class="right"><span class="down">-4.53%</span></td><td class="right">91.18%</td><td class="right">16.42%</td><td class="right">615.22 亿</td></tr><tr><td class="left"><span class="strong">2026三季报</span></td><td class="right">1,332.84</td><td class="right"><span class="up">+1.82%</span></td><td class="right">644.67</td><td class="right"><span class="down">-0.25%</span></td><td class="right">89.58%</td><td class="right">11.90%</td><td class="right">840.59 亿</td></tr></tbody></table></div><div class="chart-box"><div class="chart-title">营收 / 归母净利 / 毛利率 多期趋势</div><div class="chart" id="chart-trend"></div></div><div class="sub-block"><div class="sub-title">财报解读</div><ol class="num-list"><li><b>年报</b>：2025 年营收同比转负、归母净利下滑 4.5%，是渠道去库存与吨价承压的直接体现；但毛利率仅回落 0.7pct，说明品牌定价根基未受损。</li><li><b>季报</b>：2026 前三季度营收重回正增长（+1.8%），单季增速转正；毛利率连续两季稳定在 89.5% 附近，环比企稳，改革对报表的压制接近尾声。</li><li><b>财务拐点信号</b>：经营现金流 840.59 亿元、同比 +120%，与净利润的背离说明渠道回款显著改善，是典型的报表领先信号；同时资产负债率降至 11.9%，财务弹性充足。</li></ol></div><div class="sub-block"><div class="sub-title">财务总结</div><ul class="bullet-list"><li>亮点：营收增速回正、现金流大幅改善、负债率持续下降。</li><li>亮点：毛利率在 90% 附近筑底，品牌溢价未被削弱。</li><li>隐患：净利润仍小幅负增长，改革对吨价的短期压制尚未完全消化。</li><li>隐患：合同负债／预收款的变化需持续跟踪，若回落则需求复苏证伪。</li></ul></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-research">
+  <header class="card-head">
+    <span class="idx">六</span>
+    <h2>券商研报点评</h2><span class="card-sub">近60日</span>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-research-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-research-body"><div class="card-inner">
+<div class="stat-row"><div class="stat-mini"><span class="k">覆盖机构</span><span class="v">11 家</span></div><div class="stat-mini"><span class="k">买入</span><span class="v">7 家</span></div><div class="stat-mini"><span class="k">增持</span><span class="v">4 家</span></div><div class="stat-mini"><span class="k">中性</span><span class="v">0 家</span></div><div class="stat-mini"><span class="k">目标价区间</span><span class="v">1,610.00 - 1,750.00 元</span></div></div><div class="chart-box"><div class="chart-title">近60日 评级分布</div><div class="chart chart-sm" id="chart-rating"></div></div><div class="grid-2"><div class="mini-card"><div class="mini-title">机构一致看多逻辑</div><ul class="bullet-list"><li>市场化改革重塑渠道与价格体系，2027 年报表弹性可期</li><li>现金流与分红能力支撑估值底</li></ul></div><div class="mini-card"><div class="mini-title">机构分歧点</div><ul class="bullet-list"><li>改革对吨价的短期拖累幅度存在分歧</li><li>行业需求复苏节奏判断不一</li></ul></div></div><div class="callout callout-warn"><div class="callout-label">需警惕的机构信号</div><ul class="bullet-list"><li>11 篇研报中买入/增持占比 100%，一致预期偏拥挤</li><li>目标价上调幅度有限，股价已部分反映改革预期</li></ul></div><div class="sub-block"><div class="sub-title">总结</div><p>机构“口头看好”明确，但从持仓数据看尚未系统性加仓；当前更适合作为底仓型配置，而非博弈弹性的首选。</p></div>
+  </div></div>
+</section>
+
+<section class="card" id="s-risk">
+  <header class="card-head">
+    <span class="idx">七</span>
+    <h2>精简风险提示</h2>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-risk-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-risk-body"><div class="card-inner">
+<ul class="risk-list"><li><span class="risk-mark">!</span><span>批价再度回落，渠道改革成效被证伪。</span></li><li><span class="risk-mark">!</span><span>白酒行业需求持续走弱，动销恢复低于预期。</span></li></ul>
+  </div></div>
+</section>
+
+<section class="card" id="s-source">
+  <header class="card-head">
+    <span class="idx">八</span>
+    <h2>数据来源与免责</h2>
+    <button class="toggle" type="button" aria-expanded="true" aria-controls="s-source-body">
+      <span class="toggle-label">收起</span><span class="chev"></span>
+    </button>
+  </header>
+  <div class="card-body" id="s-source-body"><div class="card-inner">
+<div class="sub-block"><div class="sub-title">数据与信息来源</div><ul class="src-list"><li><a href="https://quote.eastmoney.com/sh600519.html" target="_blank" rel="noopener">东方财富 · 实时行情与估值</a></li><li><a href="https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/Index?type=web&amp;code=SH600519" target="_blank" rel="noopener">东方财富 F10 · 主营构成</a></li><li><a href="https://data.eastmoney.com/report/600519.html" target="_blank" rel="noopener">东方财富 · 研报中心</a></li><li><a href="https://www.sse.com.cn/assortment/stock/list/info/company/index.shtml?COMPANY_CODE=600519" target="_blank" rel="noopener">公司公告与定期报告（上交所）</a></li></ul></div><div class="disclaimer">本报告由 AI 依据公开资料整理，仅用于信息研究，不构成任何投资建议。市场有风险，决策需谨慎。</div><div class="gen-note">生成器：dsh-stock-review · 单文件离线渲染</div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>© 2026 个股深度股评 · 结构化研究框架</div>
+    <div>数据来自公开渠道，可能存在延迟或偏差，请以交易所与公司公告为准。</div>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="回到顶部">↑</button>
+<script>window.__STOCK_REVIEW__ = {"demo": true, "sentiment": {"sites": [{"name": "韭研公社", "bull": ["“全面向C”改革是十年级别的渠道重构，厂商重新掌握终端定价权", "三季报经营现金流 840 亿、同比 +120%，报表质量显著改善", "批价止跌回升，渠道库存去化接近尾声"], "bear": ["改革短期牺牲吨价，报表增速被压制", "行业需求仍弱，动销恢复需要时间验证"]}, {"name": "雪球", "bull": ["21 倍 PE、股息率抬升，估值已隐含悲观预期", "龙头份额在行业出清中被动提升"], "bear": ["白酒板块整体杀估值尚未结束", "机构持仓仍偏重，存在调仓压力"]}, {"name": "同花顺", "bull": ["股价站上年线，量能温和放大", "北向资金连续净买入"], "bear": ["缺乏板块性催化，独立行情难持续"]}, {"name": "东财", "bull": ["分红率提升预期强化防御属性", "渠道改革落地节奏超预期"], "bear": ["批价若再度回落将证伪复苏逻辑"]}, {"name": "淘股吧", "bull": ["超跌白马修复主线，茅台是风向标"], "bear": ["短线资金偏好题材，龙头弹性不足"]}], "summary": ["近两周舆情整体偏多，核心分歧集中在“改革成效能否在年报兑现”，而非方向本身。", "机构与散户观点趋同，情绪处于中性偏暖区间，尚未出现一致性亢奋。"]}, "business": {"basis": "2025年报", "rows": [{"segment": "茅台酒", "share": 86.8, "revenue": 1465.0, "margin": 93.5, "desc": "飞天茅台、生肖/精品等非标产品；核心下游为高端商务宴请、礼赠与收藏市场"}, {"segment": "其他系列酒", "share": 13.2, "revenue": 222.75, "margin": 76.1, "desc": "茅台1935、王子酒、迎宾酒等；面向次高端宴席与大众消费场景"}, {"segment": "其他业务", "share": 0.0, "revenue": 0.64, "margin": -36.0, "desc": "包装材料、酒店等配套业务，体量极小"}]}, "research": {"window": "近60日", "count": 11, "ratings": {"buy": 7, "add": 4, "neutral": 0, "sell": 0}, "target_low": 1610, "target_high": 1750, "consensus": ["市场化改革重塑渠道与价格体系，2027 年报表弹性可期", "现金流与分红能力支撑估值底"], "disputes": ["改革对吨价的短期拖累幅度存在分歧", "行业需求复苏节奏判断不一"], "warnings": ["11 篇研报中买入/增持占比 100%，一致预期偏拥挤", "目标价上调幅度有限，股价已部分反映改革预期"], "conclusion": "机构“口头看好”明确，但从持仓数据看尚未系统性加仓；当前更适合作为底仓型配置，而非博弈弹性的首选。"}, "financials": {"annual": {"period": "2025年报", "revenue": 1720.54, "revenue_yoy": -1.2, "net_profit": 823.2, "net_profit_yoy": -4.53, "gross_margin": 91.18, "debt_ratio": 16.42, "ocf": 615.22}, "quarter": {"period": "2026三季报", "revenue": 1332.84, "revenue_yoy": 1.82, "net_profit": 644.67, "net_profit_yoy": -0.25, "gross_margin": 89.58, "debt_ratio": 11.9, "ocf": 840.59}, "commentary": {"annual": "2025 年营收同比转负、归母净利下滑 4.5%，是渠道去库存与吨价承压的直接体现；但毛利率仅回落 0.7pct，说明品牌定价根基未受损。", "quarter": "2026 前三季度营收重回正增长（+1.8%），单季增速转正；毛利率连续两季稳定在 89.5% 附近，环比企稳，改革对报表的压制接近尾声。", "inflection": "经营现金流 840.59 亿元、同比 +120%，与净利润的背离说明渠道回款显著改善，是典型的报表领先信号；同时资产负债率降至 11.9%，财务弹性充足。", "summary": ["亮点：营收增速回正、现金流大幅改善、负债率持续下降。", "亮点：毛利率在 90% 附近筑底，品牌溢价未被削弱。", "隐患：净利润仍小幅负增长，改革对吨价的短期压制尚未完全消化。", "隐患：合同负债／预收款的变化需持续跟踪，若回落则需求复苏证伪。"]}, "trend": [{"period": "2022A", "revenue": 1275.54, "net_profit": 627.17, "gross_margin": 91.87}, {"period": "2023A", "revenue": 1505.6, "net_profit": 747.34, "gross_margin": 91.96}, {"period": "2024A", "revenue": 1741.44, "net_profit": 862.28, "gross_margin": 91.93}, {"period": "2025A", "revenue": 1720.54, "net_profit": 823.2, "gross_margin": 91.18}]}};</script>
+<script>
+(function(){
+  var DATA = window.__STOCK_REVIEW__ || {};
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+
+  // 折叠/展开
+  cards.forEach(function(card){
+    var btn = card.querySelector('.toggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var collapsed = card.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      btn.querySelector('.toggle-label').textContent = collapsed ? '展开' : '收起';
+    });
+  });
+
+  // 导航高亮
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  if('IntersectionObserver' in window){
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var link = map[e.target.id];
+          if(link) link.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    cards.forEach(function(c){ io.observe(c); });
+  }
+
+  // 回到顶部
+  var top = document.querySelector('.to-top');
+  if(top){
+    window.addEventListener('scroll', function(){
+      top.classList.toggle('show', window.scrollY > 500);
+    }, {passive:true});
+    top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  }
+
+  // 示例横幅
+  if(DATA.demo){
+    var bar = document.createElement('div');
+    bar.className = 'demo-bar';
+    bar.textContent = '示例数据 · 仅用于验证页面渲染，不代表真实研究结论';
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
+  // 图表
+  if(!window.echarts){
+    document.querySelectorAll('.chart').forEach(function(el){
+      el.innerHTML = '<div class="chart-fallback" style="display:block">ECharts CDN 未加载，图表暂不可用（离线环境）。表格数据不受影响。</div>';
+    });
+    return;
+  }
+
+  var GOLD = '#f5c063', UP = '#ff5b5b', DOWN = '#2ecc8f', TEXT = '#dbe6fb', MUTED = '#93a6c4', LINE = 'rgba(255,255,255,.07)';
+  var axisCommon = {
+    axisLine: { lineStyle: { color: 'rgba(255,255,255,.16)' } },
+    axisLabel: { color: MUTED, fontSize: 11 },
+    splitLine: { lineStyle: { color: LINE } }
+  };
+  function chart(id, option){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var instance = echarts.init(el, null, {renderer:'canvas'});
+    instance.setOption(option);
+    window.addEventListener('resize', function(){ instance.resize(); });
+    document.addEventListener('click', function(e){
+      if(e.target && e.target.closest && e.target.closest('.toggle')) setTimeout(function(){ instance.resize(); }, 320);
+    });
+  }
+  function has(id){ return document.getElementById(id) !== null; }
+
+  // 多空对比
+  if(has('chart-sentiment')){
+    var sites = (DATA.sentiment && DATA.sentiment.sites) || [];
+    var names = sites.map(function(s){ return s.name; });
+    chart('chart-sentiment', {
+      backgroundColor:'transparent',
+      tooltip:{trigger:'axis', axisPointer:{type:'shadow'}},
+      legend:{data:['看多','看空'], textStyle:{color:MUTED}, top:0, right:0},
+      grid:{left:8, right:18, top:36, bottom:6, containLabel:true},
+      xAxis:{type:'value', ...axisCommon, splitLine:{lineStyle:{color:LINE}}},
+      yAxis:{type:'category', data:names, ...axisCommon, axisLine:{lineStyle:{color:'rgba(255,255,255,.16)'}}},
+      series:[
+        {name:'看多', type:'bar', stack:'total', data:sites.map(function(s){return (s.bull||[]).length}),
+         itemStyle:{color:UP, borderRadius:[0,0,0,0]}, barWidth:16},
+        {name:'看空', type:'bar', stack:'total', data:sites.map(function(s){return (s.bear||[]).length}),
+         itemStyle:{color:DOWN}, barWidth:16}
+      ]
+    });
+  }
+
+  // 营收结构
+  if(has('chart-business')){
+    var rows = (DATA.business && DATA.business.rows) || [];
+    chart('chart-business', {
+      backgroundColor:'transparent',
+      tooltip:{trigger:'item', formatter:'{b}<br/>营收占比 {d}%（营收 {c} 亿元）'},
+      legend:{orient:'vertical', right:10, top:'middle', textStyle:{color:MUTED, fontSize:12}},
+      series:[{
+        type:'pie', radius:['46%','72%'], center:['34%','52%'], avoidLabelOverlap:true,
+        itemStyle:{borderColor:'#0b1628', borderWidth:3},
+        label:{color:TEXT, formatter:'{b}\n{d}%', fontSize:11},
+        labelLine:{lineStyle:{color:'rgba(245,192,99,.35)'}},
+        data: rows.map(function(r){ return {name:r.segment, value: r.share, revenue: r.revenue}; }),
+        color:['#f5c063','#5b9dff','#2ecc8f','#ff8a5c','#9d7bff','#57c7d4']
+      }]
+    });
+  }
+
+  // 评级分布
+  if(has('chart-rating')){
+    var r = (DATA.research && DATA.research.ratings) || {};
+    var data = [
+      {name:'买入', value: r.buy||0},
+      {name:'增持', value: r.add||0},
+      {name:'中性', value: r.neutral||0},
+      {name:'减持/卖出', value: r.sell||0}
+    ].filter(function(d){ return d.value > 0; });
+    chart('chart-rating', {
+      backgroundColor:'transparent',
+      tooltip:{trigger:'item', formatter:'{b}：{c} 家（{d}%）'},
+      legend:{bottom:0, textStyle:{color:MUTED}},
+      series:[{
+        type:'pie', radius:['48%','74%'], center:['50%','46%'],
+        itemStyle:{borderColor:'#0b1628', borderWidth:3},
+        label:{color:TEXT, formatter:'{b} {c}家', fontSize:11},
+        data:data,
+        color:['#ff5b5b','#f5c063','#93a6c4','#2ecc8f']
+      }]
+    });
+  }
+
+  // 趋势
+  if(has('chart-trend')){
+    var trend = (DATA.financials && DATA.financials.trend) || [];
+    chart('chart-trend', {
+      backgroundColor:'transparent',
+      tooltip:{trigger:'axis'},
+      legend:{top:0, textStyle:{color:MUTED}, data:['营收(亿)','归母净利(亿)','毛利率(%)']},
+      grid:{left:8, right:8, top:44, bottom:6, containLabel:true},
+      xAxis:{type:'category', data:trend.map(function(t){return t.period}), ...axisCommon},
+      yAxis:[
+        {type:'value', name:'亿元', nameTextStyle:{color:MUTED}, ...axisCommon},
+        {type:'value', name:'%', nameTextStyle:{color:MUTED}, ...axisCommon, min:'dataMin', splitLine:{show:false}}
+      ],
+      series:[
+        {name:'营收(亿)', type:'bar', data:trend.map(function(t){return t.revenue}), barWidth:14,
+         itemStyle:{color:'rgba(91,157,255,.75)', borderRadius:[4,4,0,0]}},
+        {name:'归母净利(亿)', type:'bar', data:trend.map(function(t){return t.net_profit}), barWidth:14,
+         itemStyle:{color:'rgba(245,192,99,.8)', borderRadius:[4,4,0,0]}},
+        {name:'毛利率(%)', type:'line', yAxisIndex:1, data:trend.map(function(t){return t.gross_margin}),
+         smooth:true, symbolSize:6, lineStyle:{color:UP, width:2.4}, itemStyle:{color:UP}}
+      ]
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "name": "dsh-stock-review",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "A-share/HK stock deep review skill for DeepSeek Harness: verifies the code, gathers quote/舆情/financials/broker research, writes a ten-section review and a single-file dark HTML report.",
+  "license": "MIT",
+  "author": "dc165015",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dc165015/dsh-stock-review.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "stock",
+    "a-share",
+    "equity-research",
+    "skill"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "SKILL.md",
+    "locale/*.json",
+    "scripts",
+    "references",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

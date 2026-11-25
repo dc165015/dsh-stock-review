@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Stock review",
+    "description": "Give it a stock code: it verifies the code, gathers quotes, 舆情, financials and broker research, then writes a ten-section review and a single-file dark HTML report.",
+    "detail": "docs/DETAIL.md"
+  }
+}
